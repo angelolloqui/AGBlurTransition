@@ -1,0 +1,506 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0B12BDBD1875840F002C193E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B12BDBC1875840F002C193E /* Foundation.framework */; };
+		0B12BDBF1875840F002C193E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B12BDBE1875840F002C193E /* CoreGraphics.framework */; };
+		0B12BDC11875840F002C193E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B12BDC01875840F002C193E /* UIKit.framework */; };
+		0B12BDC71875840F002C193E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0B12BDC51875840F002C193E /* InfoPlist.strings */; };
+		0B12BDC91875840F002C193E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B12BDC81875840F002C193E /* main.m */; };
+		0B12BDCD1875840F002C193E /* AGAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B12BDCC1875840F002C193E /* AGAppDelegate.m */; };
+		0B12BDCF1875840F002C193E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B12BDCE1875840F002C193E /* Images.xcassets */; };
+		0B12BDD61875840F002C193E /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B12BDD51875840F002C193E /* XCTest.framework */; };
+		0B12BDD71875840F002C193E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B12BDBC1875840F002C193E /* Foundation.framework */; };
+		0B12BDD81875840F002C193E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B12BDC01875840F002C193E /* UIKit.framework */; };
+		0B12BDE01875840F002C193E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0B12BDDE1875840F002C193E /* InfoPlist.strings */; };
+		0B12BDE21875840F002C193E /* BlurTransitionExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B12BDE11875840F002C193E /* BlurTransitionExampleTests.m */; };
+		0B12BDEE18758604002C193E /* AGMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B12BDEC18758604002C193E /* AGMainViewController.m */; };
+		0B12BDEF18758604002C193E /* AGMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B12BDED18758604002C193E /* AGMainViewController.xib */; };
+		0B12BDF318758618002C193E /* AGModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B12BDF118758618002C193E /* AGModalViewController.m */; };
+		0B12BDF418758618002C193E /* AGModalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B12BDF218758618002C193E /* AGModalViewController.xib */; };
+		0BC2065B18758CB100C113DD /* AGBlurTransitionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BC2065A18758CB100C113DD /* AGBlurTransitionDelegate.m */; };
+		0BC2065C18758CB100C113DD /* AGBlurTransitionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BC2065A18758CB100C113DD /* AGBlurTransitionDelegate.m */; };
+		0BC2065F18758F3900C113DD /* UIViewController+AGBlurTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BC2065E18758F3900C113DD /* UIViewController+AGBlurTransition.m */; };
+		0BC2066018758F3900C113DD /* UIViewController+AGBlurTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BC2065E18758F3900C113DD /* UIViewController+AGBlurTransition.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0B12BDD91875840F002C193E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0B12BDB11875840F002C193E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0B12BDB81875840F002C193E;
+			remoteInfo = BlurTransitionExample;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0B12BDB91875840F002C193E /* BlurTransitionExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlurTransitionExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0B12BDBC1875840F002C193E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		0B12BDBE1875840F002C193E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		0B12BDC01875840F002C193E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		0B12BDC41875840F002C193E /* BlurTransitionExample-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BlurTransitionExample-Info.plist"; sourceTree = "<group>"; };
+		0B12BDC61875840F002C193E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		0B12BDC81875840F002C193E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		0B12BDCA1875840F002C193E /* BlurTransitionExample-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BlurTransitionExample-Prefix.pch"; sourceTree = "<group>"; };
+		0B12BDCB1875840F002C193E /* AGAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AGAppDelegate.h; sourceTree = "<group>"; };
+		0B12BDCC1875840F002C193E /* AGAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AGAppDelegate.m; sourceTree = "<group>"; };
+		0B12BDCE1875840F002C193E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		0B12BDD41875840F002C193E /* BlurTransitionExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BlurTransitionExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0B12BDD51875840F002C193E /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		0B12BDDD1875840F002C193E /* BlurTransitionExampleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BlurTransitionExampleTests-Info.plist"; sourceTree = "<group>"; };
+		0B12BDDF1875840F002C193E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		0B12BDE11875840F002C193E /* BlurTransitionExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BlurTransitionExampleTests.m; sourceTree = "<group>"; };
+		0B12BDEB18758604002C193E /* AGMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGMainViewController.h; sourceTree = "<group>"; };
+		0B12BDEC18758604002C193E /* AGMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGMainViewController.m; sourceTree = "<group>"; };
+		0B12BDED18758604002C193E /* AGMainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AGMainViewController.xib; sourceTree = "<group>"; };
+		0B12BDF018758618002C193E /* AGModalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGModalViewController.h; sourceTree = "<group>"; };
+		0B12BDF118758618002C193E /* AGModalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGModalViewController.m; sourceTree = "<group>"; };
+		0B12BDF218758618002C193E /* AGModalViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AGModalViewController.xib; sourceTree = "<group>"; };
+		0BC2065918758CB100C113DD /* AGBlurTransitionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGBlurTransitionDelegate.h; sourceTree = "<group>"; };
+		0BC2065A18758CB100C113DD /* AGBlurTransitionDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGBlurTransitionDelegate.m; sourceTree = "<group>"; };
+		0BC2065D18758F3900C113DD /* UIViewController+AGBlurTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+AGBlurTransition.h"; sourceTree = "<group>"; };
+		0BC2065E18758F3900C113DD /* UIViewController+AGBlurTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+AGBlurTransition.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0B12BDB61875840F002C193E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0B12BDBF1875840F002C193E /* CoreGraphics.framework in Frameworks */,
+				0B12BDC11875840F002C193E /* UIKit.framework in Frameworks */,
+				0B12BDBD1875840F002C193E /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0B12BDD11875840F002C193E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0B12BDD61875840F002C193E /* XCTest.framework in Frameworks */,
+				0B12BDD81875840F002C193E /* UIKit.framework in Frameworks */,
+				0B12BDD71875840F002C193E /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0B12BDB01875840F002C193E = {
+			isa = PBXGroup;
+			children = (
+				0BC2065818758BD800C113DD /* src */,
+				0B12BDC21875840F002C193E /* BlurTransitionExample */,
+				0B12BDDB1875840F002C193E /* BlurTransitionExampleTests */,
+				0B12BDBB1875840F002C193E /* Frameworks */,
+				0B12BDBA1875840F002C193E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		0B12BDBA1875840F002C193E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0B12BDB91875840F002C193E /* BlurTransitionExample.app */,
+				0B12BDD41875840F002C193E /* BlurTransitionExampleTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0B12BDBB1875840F002C193E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0B12BDBC1875840F002C193E /* Foundation.framework */,
+				0B12BDBE1875840F002C193E /* CoreGraphics.framework */,
+				0B12BDC01875840F002C193E /* UIKit.framework */,
+				0B12BDD51875840F002C193E /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		0B12BDC21875840F002C193E /* BlurTransitionExample */ = {
+			isa = PBXGroup;
+			children = (
+				0B12BDCB1875840F002C193E /* AGAppDelegate.h */,
+				0B12BDCC1875840F002C193E /* AGAppDelegate.m */,
+				0B12BDCE1875840F002C193E /* Images.xcassets */,
+				0B12BDC31875840F002C193E /* Supporting Files */,
+				0B12BDEB18758604002C193E /* AGMainViewController.h */,
+				0B12BDEC18758604002C193E /* AGMainViewController.m */,
+				0B12BDED18758604002C193E /* AGMainViewController.xib */,
+				0B12BDF018758618002C193E /* AGModalViewController.h */,
+				0B12BDF118758618002C193E /* AGModalViewController.m */,
+				0B12BDF218758618002C193E /* AGModalViewController.xib */,
+			);
+			path = BlurTransitionExample;
+			sourceTree = "<group>";
+		};
+		0B12BDC31875840F002C193E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0B12BDC41875840F002C193E /* BlurTransitionExample-Info.plist */,
+				0B12BDC51875840F002C193E /* InfoPlist.strings */,
+				0B12BDC81875840F002C193E /* main.m */,
+				0B12BDCA1875840F002C193E /* BlurTransitionExample-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0B12BDDB1875840F002C193E /* BlurTransitionExampleTests */ = {
+			isa = PBXGroup;
+			children = (
+				0B12BDE11875840F002C193E /* BlurTransitionExampleTests.m */,
+				0B12BDDC1875840F002C193E /* Supporting Files */,
+			);
+			path = BlurTransitionExampleTests;
+			sourceTree = "<group>";
+		};
+		0B12BDDC1875840F002C193E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0B12BDDD1875840F002C193E /* BlurTransitionExampleTests-Info.plist */,
+				0B12BDDE1875840F002C193E /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0BC2065818758BD800C113DD /* src */ = {
+			isa = PBXGroup;
+			children = (
+				0BC2065918758CB100C113DD /* AGBlurTransitionDelegate.h */,
+				0BC2065A18758CB100C113DD /* AGBlurTransitionDelegate.m */,
+				0BC2065D18758F3900C113DD /* UIViewController+AGBlurTransition.h */,
+				0BC2065E18758F3900C113DD /* UIViewController+AGBlurTransition.m */,
+			);
+			name = src;
+			path = ../src;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0B12BDB81875840F002C193E /* BlurTransitionExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0B12BDE51875840F002C193E /* Build configuration list for PBXNativeTarget "BlurTransitionExample" */;
+			buildPhases = (
+				0B12BDB51875840F002C193E /* Sources */,
+				0B12BDB61875840F002C193E /* Frameworks */,
+				0B12BDB71875840F002C193E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BlurTransitionExample;
+			productName = BlurTransitionExample;
+			productReference = 0B12BDB91875840F002C193E /* BlurTransitionExample.app */;
+			productType = "com.apple.product-type.application";
+		};
+		0B12BDD31875840F002C193E /* BlurTransitionExampleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0B12BDE81875840F002C193E /* Build configuration list for PBXNativeTarget "BlurTransitionExampleTests" */;
+			buildPhases = (
+				0B12BDD01875840F002C193E /* Sources */,
+				0B12BDD11875840F002C193E /* Frameworks */,
+				0B12BDD21875840F002C193E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0B12BDDA1875840F002C193E /* PBXTargetDependency */,
+			);
+			name = BlurTransitionExampleTests;
+			productName = BlurTransitionExampleTests;
+			productReference = 0B12BDD41875840F002C193E /* BlurTransitionExampleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0B12BDB11875840F002C193E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = AG;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = angelolloqui.com;
+				TargetAttributes = {
+					0B12BDD31875840F002C193E = {
+						TestTargetID = 0B12BDB81875840F002C193E;
+					};
+				};
+			};
+			buildConfigurationList = 0B12BDB41875840F002C193E /* Build configuration list for PBXProject "BlurTransitionExample" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 0B12BDB01875840F002C193E;
+			productRefGroup = 0B12BDBA1875840F002C193E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0B12BDB81875840F002C193E /* BlurTransitionExample */,
+				0B12BDD31875840F002C193E /* BlurTransitionExampleTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0B12BDB71875840F002C193E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0B12BDC71875840F002C193E /* InfoPlist.strings in Resources */,
+				0B12BDCF1875840F002C193E /* Images.xcassets in Resources */,
+				0B12BDF418758618002C193E /* AGModalViewController.xib in Resources */,
+				0B12BDEF18758604002C193E /* AGMainViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0B12BDD21875840F002C193E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0B12BDE01875840F002C193E /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0B12BDB51875840F002C193E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0B12BDCD1875840F002C193E /* AGAppDelegate.m in Sources */,
+				0B12BDC91875840F002C193E /* main.m in Sources */,
+				0BC2065F18758F3900C113DD /* UIViewController+AGBlurTransition.m in Sources */,
+				0B12BDF318758618002C193E /* AGModalViewController.m in Sources */,
+				0B12BDEE18758604002C193E /* AGMainViewController.m in Sources */,
+				0BC2065B18758CB100C113DD /* AGBlurTransitionDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0B12BDD01875840F002C193E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0BC2065C18758CB100C113DD /* AGBlurTransitionDelegate.m in Sources */,
+				0B12BDE21875840F002C193E /* BlurTransitionExampleTests.m in Sources */,
+				0BC2066018758F3900C113DD /* UIViewController+AGBlurTransition.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0B12BDDA1875840F002C193E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0B12BDB81875840F002C193E /* BlurTransitionExample */;
+			targetProxy = 0B12BDD91875840F002C193E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		0B12BDC51875840F002C193E /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0B12BDC61875840F002C193E /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		0B12BDDE1875840F002C193E /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0B12BDDF1875840F002C193E /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0B12BDE31875840F002C193E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		0B12BDE41875840F002C193E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0B12BDE61875840F002C193E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BlurTransitionExample/BlurTransitionExample-Prefix.pch";
+				INFOPLIST_FILE = "BlurTransitionExample/BlurTransitionExample-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		0B12BDE71875840F002C193E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BlurTransitionExample/BlurTransitionExample-Prefix.pch";
+				INFOPLIST_FILE = "BlurTransitionExample/BlurTransitionExample-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		0B12BDE91875840F002C193E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/BlurTransitionExample.app/BlurTransitionExample";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BlurTransitionExample/BlurTransitionExample-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "BlurTransitionExampleTests/BlurTransitionExampleTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		0B12BDEA1875840F002C193E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/BlurTransitionExample.app/BlurTransitionExample";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BlurTransitionExample/BlurTransitionExample-Prefix.pch";
+				INFOPLIST_FILE = "BlurTransitionExampleTests/BlurTransitionExampleTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0B12BDB41875840F002C193E /* Build configuration list for PBXProject "BlurTransitionExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0B12BDE31875840F002C193E /* Debug */,
+				0B12BDE41875840F002C193E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0B12BDE51875840F002C193E /* Build configuration list for PBXNativeTarget "BlurTransitionExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0B12BDE61875840F002C193E /* Debug */,
+				0B12BDE71875840F002C193E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0B12BDE81875840F002C193E /* Build configuration list for PBXNativeTarget "BlurTransitionExampleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0B12BDE91875840F002C193E /* Debug */,
+				0B12BDEA1875840F002C193E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0B12BDB11875840F002C193E /* Project object */;
+}
