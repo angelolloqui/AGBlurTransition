@@ -37,6 +37,16 @@
 
 #pragma mark - UIViewControllerAnimatedTransitioning methods
 
+- (id <UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source {
+    return self;
+}
+
+- (id <UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed {
+    return self;
+}
+
+#pragma mark - UIViewControllerAnimatedTransitioning methods
+
 - (NSTimeInterval)transitionDuration:(id <UIViewControllerContextTransitioning>)transitionContext {
     return self.duration;
 }

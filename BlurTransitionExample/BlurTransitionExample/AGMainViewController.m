@@ -10,10 +10,6 @@
 #import "AGModalViewController.h"
 #import "UIViewController+AGBlurTransition.h"
 
-@interface AGMainViewController () <UIViewControllerTransitioningDelegate>
-
-@end
-
 @implementation AGMainViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -40,17 +36,8 @@
 - (IBAction)openModalAction:(id)sender {
     self.modalPresentationStyle = UIModalPresentationCustom;
     AGModalViewController *vc = [[AGModalViewController alloc] init];
-    vc.transitioningDelegate = self;
+    vc.transitioningDelegate = self.AG_blurTransitionDelegate;
     [self presentViewController:vc animated:YES completion:nil];
 }
-
-- (id <UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source {
-    return self.AG_blurTransitionDelegate;
-}
-
-- (id <UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed {
-    return self.AG_blurTransitionDelegate;
-}
-
 
 @end
