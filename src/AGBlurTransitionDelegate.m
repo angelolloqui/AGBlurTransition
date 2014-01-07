@@ -97,6 +97,7 @@
     self.backgroundView.backgroundColor = [UIColor clearColor];
     toViewController.view.frame = UIEdgeInsetsInsetRect(finalFrame, self.insets);
     [containerView addSubview:self.backgroundView];
+    containerView.frame = finalFrame;
     
     // Set initial state of animation
     toViewController.view.transform = CGAffineTransformScale(CGAffineTransformIdentity, 0.1, 0.1);
@@ -169,7 +170,7 @@
 
 - (UIImage *)createImageFromView:(UIView *)view {
     UIGraphicsBeginImageContextWithOptions(view.bounds.size, view.opaque, 0.0);
-    [view.layer renderInContext:UIGraphicsGetCurrentContext()];
+    [view drawViewHierarchyInRect:view.bounds afterScreenUpdates:NO];
     UIImage * img = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     return img;

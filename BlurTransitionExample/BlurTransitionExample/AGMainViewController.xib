@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5037" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AGMainViewController">
@@ -14,28 +14,29 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is the example project of the AGBlurTransition library" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="5pC-Wr-uSL">
-                    <rect key="frame" x="20" y="40" width="280" height="41"/>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Example of AGBlurTransition" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="5pC-Wr-uSL">
+                    <rect key="frame" x="20" y="90" width="280" height="41"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LQp-4s-2D8">
-                    <rect key="frame" x="20" y="101" width="280" height="120"/>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LQp-4s-2D8">
+                    <rect key="frame" x="20" y="151" width="280" height="120"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="120" id="uHA-hU-amY"/>
                     </constraints>
-                    <string key="text">Please, star my project if you find it useful :)
+                    <string key="text">Please, star my project on github if you find it useful :)
 
 You can also check out more information about me on http://angelolloqui.com</string>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    <dataDetectorType key="dataDetectorTypes" link="YES"/>
                 </textView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Luc-cr-ddS">
-                    <rect key="frame" x="20" y="231" width="280" height="30"/>
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Luc-cr-ddS">
+                    <rect key="frame" x="20" y="281" width="280" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" title="Open blur modal">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -44,16 +45,16 @@ You can also check out more information about me on http://angelolloqui.com</str
                         <action selector="openModalAction:" destination="-1" eventType="touchUpInside" id="Mow-8x-MdY"/>
                     </connections>
                 </button>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Qt-HY-nrE">
-                    <rect key="frame" x="0.0" y="281" width="100" height="287"/>
+                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Qt-HY-nrE">
+                    <rect key="frame" x="0.0" y="331" width="100" height="237"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="0.96470594409999999" green="0.59607845540000004" blue="0.2117647231" alpha="1" colorSpace="deviceRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="100" id="QsE-nt-WtK"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lHf-GR-JhE">
-                    <rect key="frame" x="220" y="281" width="100" height="287"/>
+                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lHf-GR-JhE">
+                    <rect key="frame" x="220" y="331" width="100" height="237"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="0.0" green="0.7019608021" blue="0.87058830259999997" alpha="1" colorSpace="deviceRGB"/>
                     <constraints>
@@ -61,8 +62,8 @@ You can also check out more information about me on http://angelolloqui.com</str
                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="tY2-Xt-jnd"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FZR-uT-bCV">
-                    <rect key="frame" x="110" y="281" width="100" height="287"/>
+                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FZR-uT-bCV">
+                    <rect key="frame" x="110" y="331" width="100" height="237"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="0.53725492949999998" green="0.74509805439999999" blue="0.25098040700000002" alpha="1" colorSpace="deviceRGB"/>
                     <constraints>
@@ -75,7 +76,7 @@ You can also check out more information about me on http://angelolloqui.com</str
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="lHf-GR-JhE" secondAttribute="bottom" id="2Jz-Jk-Sbu"/>
                 <constraint firstItem="0Qt-HY-nrE" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="2eY-1p-VSc"/>
-                <constraint firstItem="5pC-Wr-uSL" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="40" id="7aM-g4-n2V"/>
+                <constraint firstItem="5pC-Wr-uSL" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="90" id="7aM-g4-n2V"/>
                 <constraint firstAttribute="bottom" secondItem="FZR-uT-bCV" secondAttribute="bottom" id="81S-0x-Tbz"/>
                 <constraint firstAttribute="trailing" secondItem="lHf-GR-JhE" secondAttribute="trailing" id="8Xf-zL-Wis"/>
                 <constraint firstItem="FZR-uT-bCV" firstAttribute="top" secondItem="Luc-cr-ddS" secondAttribute="bottom" constant="20" id="8YZ-ou-DQR"/>
@@ -94,6 +95,7 @@ You can also check out more information about me on http://angelolloqui.com</str
                 <constraint firstItem="lHf-GR-JhE" firstAttribute="leading" secondItem="FZR-uT-bCV" secondAttribute="trailing" constant="10" id="slL-lm-llT"/>
             </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>
     </objects>
