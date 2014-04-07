@@ -98,29 +98,34 @@
     toViewController.view.frame = UIEdgeInsetsInsetRect(finalFrame, self.insets);
     [containerView addSubview:self.backgroundView];
     containerView.frame = finalFrame;
-    
+
     // Set initial state of animation
-    toViewController.view.transform = CGAffineTransformScale(CGAffineTransformIdentity, 0.1, 0.1);
+    if (self.animationType == AGBlurTransitionAnimationTypeModal) {
+        toViewController.view.transform = CGAffineTransformTranslate(CGAffineTransformIdentity, 0.f, toViewController.view.frame.size.height);
+    }
+    else {
+        toViewController.view.transform = CGAffineTransformScale(CGAffineTransformIdentity, 0.1, 0.1);
+    }
     self.bluredImageView.alpha = 0.0;
-    
+
     // Animate
     [UIView animateWithDuration:duration
                           delay:0.0
          usingSpringWithDamping:0.6
           initialSpringVelocity:0.0
                         options:UIViewAnimationOptionCurveLinear
-                     animations:^{
-                         toViewController.view.transform = CGAffineTransformIdentity;
-                         blurImageView.alpha = 1.0;
-                     } completion:^(BOOL finished) {
-                         // Inform the context of completion
-                         [transitionContext completeTransition:YES];
-                         
-                         //Hack! the view controller is resized and background view moved out of the transition view. We need to replace it
-                         UIView *parent = toViewController.view.superview;
-                         [self.backgroundView addSubview:toViewController.view];
-                         [parent addSubview:self.backgroundView];
-                     }];
+                     animations: ^{
+        toViewController.view.transform = CGAffineTransformIdentity;
+        blurImageView.alpha = 1.0;
+    } completion: ^(BOOL finished) {
+        // Inform the context of completion
+        [transitionContext completeTransition:YES];
+
+        //Hack! the view controller is resized and background view moved out of the transition view. We need to replace it
+        UIView *parent = toViewController.view.superview;
+        [self.backgroundView addSubview:toViewController.view];
+        [parent addSubview:self.backgroundView];
+    }];
 }
 
 - (void)animateCloseTransition:(id <UIViewControllerContextTransitioning>)transitionContext {
@@ -130,43 +135,53 @@
     UIViewController *fromViewController = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
     NSTimeInterval duration = [self transitionDuration:transitionContext];
     UIView *containerView = [transitionContext containerView];
-    
+
     // Add the view and backgrounds
     [containerView addSubview:toViewController.view];
     [containerView addSubview:self.bluredImageView];
     [containerView addSubview:fromViewController.view];
-    
+
     // Animate with keyframes
     [UIView animateKeyframesWithDuration:duration
                                    delay:0.0
                                  options:UIViewKeyframeAnimationOptionCalculationModeCubic
-                              animations:^{
-                                  // keyframe one
-                                  [UIView addKeyframeWithRelativeStartTime:0.0
-                                                          relativeDuration:0.2
-                                                                animations:^{
-                                                                    fromViewController.view.transform = CGAffineTransformScale(CGAffineTransformIdentity, 1.2, 1.2);
-                                                                }];
-                                  // keyframe two
-                                  [UIView addKeyframeWithRelativeStartTime:0.2
-                                                          relativeDuration:0.6
-                                                                animations:^{
-                                                                    fromViewController.view.transform = CGAffineTransformScale(CGAffineTransformIdentity, 0.00001, 0.00001);
-                                                                    self.bluredImageView.alpha = 0.0;
-                                                                }];
-                                  [UIView addKeyframeWithRelativeStartTime:0.0
-                                                          relativeDuration:1.0
-                                                                animations:^{
-                                                                    self.bluredImageView.alpha = 0.0;
-                                                                }];
-                              }
-                              completion:^(BOOL finished) {
-                                  [self.bluredImageView removeFromSuperview];
-                                  self.backgroundView = nil;
-                                  [transitionContext completeTransition:YES];
-                              }];
-}
+                              animations: ^{
+        // keyframe one
+        [UIView addKeyframeWithRelativeStartTime:0.0
+                                relativeDuration:0.2
+                                      animations: ^{
+            if (self.animationType == AGBlurTransitionAnimationTypeModal) {
+                fromViewController.view.transform = CGAffineTransformTranslate(CGAffineTransformIdentity, 0, -fromViewController.view.frame.size.height * .2);
+            }
+            else {
+                fromViewController.view.transform = CGAffineTransformScale(CGAffineTransformIdentity, 1.2, 1.2);
+            }
+        }];
+        // keyframe two
+        [UIView addKeyframeWithRelativeStartTime:0.2
+                                relativeDuration:0.6
+                                      animations: ^{
+            if (self.animationType == AGBlurTransitionAnimationTypeModal) {
+                fromViewController.view.transform = CGAffineTransformTranslate(CGAffineTransformIdentity, 0, fromViewController.view.frame.size.height);
+            }
+            else {
+                fromViewController.view.transform = CGAffineTransformScale(CGAffineTransformIdentity, 0.00001, 0.00001);
+            }
+            self.bluredImageView.alpha = 0.0;
+        }];
+        [UIView addKeyframeWithRelativeStartTime:0.0
+                                relativeDuration:1.0
+                                      animations: ^{
+            self.bluredImageView.alpha = 0.0;
+        }];
+    }
 
+                              completion: ^(BOOL finished) {
+        [self.bluredImageView removeFromSuperview];
+        self.backgroundView = nil;
+        [transitionContext completeTransition:YES];
+    }];
+}
 
 - (UIImage *)createImageFromView:(UIView *)view {
     UIGraphicsBeginImageContextWithOptions(view.bounds.size, view.opaque, 0.0);

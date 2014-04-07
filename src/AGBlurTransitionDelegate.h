@@ -8,6 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
+typedef NS_ENUM (NSInteger, AGBlurTransitionAnimationType)
+{
+    AGBlurTransitionAnimationTypeDefault = 0,
+    AGBlurTransitionAnimationTypeModal
+};
+
 @interface AGBlurTransitionDelegate : NSObject <UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning>
 
 /** Configures the animation duration. Defaults to 0.5 */
@@ -24,5 +30,8 @@
 
 /** Configures tint color of blur image. Defaults to black 0.3 alpha */
 @property (nonatomic, strong) UIColor *tintColor;
+
+/** Configures the style of animation. Defaults to AGBlurTransitionAnimationTypeDefault. */
+@property (nonatomic, assign) AGBlurTransitionAnimationType animationType;
 
 @end
