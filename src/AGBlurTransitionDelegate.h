@@ -11,7 +11,7 @@
 typedef NS_ENUM (NSInteger, AGBlurTransitionAnimationType)
 {
     AGBlurTransitionAnimationTypeDefault = 0,
-    AGBlurTransitionAnimationTypeModal
+    AGBlurTransitionAnimationTypeSlide
 };
 
 @interface AGBlurTransitionDelegate : NSObject <UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning>

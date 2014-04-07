@@ -100,7 +100,7 @@
     containerView.frame = finalFrame;
 
     // Set initial state of animation
-    if (self.animationType == AGBlurTransitionAnimationTypeModal) {
+    if (self.animationType == AGBlurTransitionAnimationTypeSlide) {
         toViewController.view.transform = CGAffineTransformTranslate(CGAffineTransformIdentity, 0.f, toViewController.view.frame.size.height);
     }
     else {
@@ -150,7 +150,7 @@
         [UIView addKeyframeWithRelativeStartTime:0.0
                                 relativeDuration:0.2
                                       animations: ^{
-            if (self.animationType == AGBlurTransitionAnimationTypeModal) {
+            if (self.animationType == AGBlurTransitionAnimationTypeSlide) {
                 fromViewController.view.transform = CGAffineTransformTranslate(CGAffineTransformIdentity, 0, -fromViewController.view.frame.size.height * .2);
             }
             else {
@@ -161,7 +161,7 @@
         [UIView addKeyframeWithRelativeStartTime:0.2
                                 relativeDuration:0.6
                                       animations: ^{
-            if (self.animationType == AGBlurTransitionAnimationTypeModal) {
+            if (self.animationType == AGBlurTransitionAnimationTypeSlide) {
                 fromViewController.view.transform = CGAffineTransformTranslate(CGAffineTransformIdentity, 0, fromViewController.view.frame.size.height);
             }
             else {
