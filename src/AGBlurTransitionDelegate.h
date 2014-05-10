@@ -34,4 +34,7 @@ typedef NS_ENUM (NSInteger, AGBlurTransitionAnimationType)
 /** Configures the style of animation. Defaults to AGBlurTransitionAnimationTypeDefault. */
 @property (nonatomic, assign) AGBlurTransitionAnimationType animationType;
 
+/** Configures corner radius. Defaults to 0 */
+@property (nonatomic, assign) CGFloat cornerRadius;
+
 @end

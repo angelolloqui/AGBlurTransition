@@ -31,6 +31,7 @@
         _blurRadius = 20;
         _saturationDeltaFactor = 1.8;
         _insets = UIEdgeInsetsMake(20, 20, 20, 20);
+        _cornerRadius = 0;
     }
     return self;
 }
@@ -96,6 +97,7 @@
     [self.backgroundView addSubview:toViewController.view];
     self.backgroundView.backgroundColor = [UIColor clearColor];
     toViewController.view.frame = UIEdgeInsetsInsetRect(finalFrame, self.insets);
+    toViewController.view.layer.cornerRadius = self.cornerRadius;
     [containerView addSubview:self.backgroundView];
     containerView.frame = finalFrame;
 
@@ -162,7 +164,7 @@
                                 relativeDuration:0.6
                                       animations: ^{
             if (self.animationType == AGBlurTransitionAnimationTypeSlide) {
-                fromViewController.view.transform = CGAffineTransformTranslate(CGAffineTransformIdentity, 0, fromViewController.view.frame.size.height);
+                fromViewController.view.transform = CGAffineTransformTranslate(CGAffineTransformIdentity, 0, fromViewController.view.frame.size.height + self.insets.top);
             }
             else {
                 fromViewController.view.transform = CGAffineTransformScale(CGAffineTransformIdentity, 0.00001, 0.00001);
