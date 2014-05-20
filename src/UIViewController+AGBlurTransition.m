@@ -11,7 +11,8 @@
 
 @implementation UIViewController (AGBlurTransition)
 
-static void *const kAGBlurTransitionDelegateKey = (void *)&kAGBlurTransitionDelegateKey;
+static void *const kAGBlurTransitionDelegateKey = (void *) &kAGBlurTransitionDelegateKey;
+
 - (void)setAG_blurTransitionDelegate:(AGBlurTransitionDelegate *)AG_blurTransitionDelegate {
     objc_setAssociatedObject(self, kAGBlurTransitionDelegateKey, AG_blurTransitionDelegate, OBJC_ASSOCIATION_RETAIN);
 }
