@@ -70,6 +70,11 @@ Collaboration
 Forks, patches and other feedback are always welcome.
 
 
+Thanks for your pull requests to:
+- [maxmamis](https://github.com/maxmamis)
+- [Vladislav Jevremović](https://github.com/VladislavJevremovic)
+
+
 Credits
 -------
 
