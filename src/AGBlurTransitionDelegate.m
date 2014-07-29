@@ -55,11 +55,11 @@
 - (void)animateTransition:(id <UIViewControllerContextTransitioning>)transitionContext {
     UIViewController *toViewController = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
     UIViewController *fromViewController = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
-
+    
     if (!self.originalViewController) {
         self.originalViewController = fromViewController;
     }
-
+    
     if (fromViewController == self.originalViewController) {
         [self animateOpenTransition:transitionContext];
     }
@@ -83,7 +83,7 @@
     CGRect finalFrame = [transitionContext finalFrameForViewController:toViewController];
     NSTimeInterval duration = [self transitionDuration:transitionContext];
     UIView *containerView = [transitionContext containerView];
-
+    
     // Add the view and backgrounds
     UIImage *originalImage = [self createImageFromView:fromViewController.view];
     self.backgroundView = [[UIView alloc] initWithFrame:finalFrame];
@@ -100,7 +100,7 @@
     toViewController.view.layer.cornerRadius = self.cornerRadius;
     [containerView addSubview:self.backgroundView];
     containerView.frame = finalFrame;
-
+    
     // Set initial state of animation
     if (self.animationType == AGBlurTransitionAnimationTypeSlide) {
         toViewController.view.transform = CGAffineTransformTranslate(CGAffineTransformIdentity, 0.f, toViewController.view.frame.size.height);
@@ -109,7 +109,7 @@
         toViewController.view.transform = CGAffineTransformScale(CGAffineTransformIdentity, 0.1, 0.1);
     }
     self.bluredImageView.alpha = 0.0;
-
+    
     // Animate
     [UIView animateWithDuration:duration
                           delay:0.0
@@ -120,29 +120,31 @@
                          toViewController.view.transform = CGAffineTransformIdentity;
                          blurImageView.alpha = 1.0;
                      } completion:^(BOOL finished) {
-        // Inform the context of completion
-        [transitionContext completeTransition:YES];
-
-        //Hack! the view controller is resized and background view moved out of the transition view. We need to replace it
-        UIView *parent = toViewController.view.superview;
-        [self.backgroundView addSubview:toViewController.view];
-        [parent addSubview:self.backgroundView];
-    }];
+                         // Inform the context of completion
+                         [transitionContext completeTransition:YES];
+                         
+                         //Hack! the view controller is resized and background view moved out of the transition view in iOS7. We need to replace it
+                         UIView *parent = toViewController.view.superview;
+                         if (parent != self.backgroundView) {
+                             [self.backgroundView addSubview:toViewController.view];
+                             [parent addSubview:self.backgroundView];
+                         }
+                     }];
 }
 
 - (void)animateCloseTransition:(id <UIViewControllerContextTransitioning>)transitionContext {
-
+    
     // Obtain state from the context
     UIViewController *toViewController = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
     UIViewController *fromViewController = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
     NSTimeInterval duration = [self transitionDuration:transitionContext];
     UIView *containerView = [transitionContext containerView];
-
+    
     // Add the view and backgrounds
     [containerView addSubview:toViewController.view];
     [containerView addSubview:self.bluredImageView];
     [containerView addSubview:fromViewController.view];
-
+    
     // Animate with keyframes
     [UIView animateKeyframesWithDuration:duration
                                    delay:0.0
@@ -177,7 +179,7 @@
                                                                     self.bluredImageView.alpha = 0.0;
                                                                 }];
                               }
-
+     
                               completion:^(BOOL finished) {
                                   [self.bluredImageView removeFromSuperview];
                                   self.backgroundView = nil;
@@ -211,10 +213,10 @@
         NSLog(@"*** error: maskImage must be backed by a CGImage: %@", maskImage);
         return nil;
     }
-
+    
     CGRect imageRect = {CGPointZero, self.size};
     UIImage *effectImage = self;
-
+    
     BOOL hasBlur = blurRadius > __FLT_EPSILON__;
     BOOL hasSaturationChange = fabs(saturationDeltaFactor - 1.) > __FLT_EPSILON__;
     if (hasBlur || hasSaturationChange) {
@@ -223,13 +225,13 @@
         CGContextScaleCTM(effectInContext, 1.0, -1.0);
         CGContextTranslateCTM(effectInContext, 0, -self.size.height);
         CGContextDrawImage(effectInContext, imageRect, self.CGImage);
-
+        
         vImage_Buffer effectInBuffer;
         effectInBuffer.data = CGBitmapContextGetData(effectInContext);
         effectInBuffer.width = CGBitmapContextGetWidth(effectInContext);
         effectInBuffer.height = CGBitmapContextGetHeight(effectInContext);
         effectInBuffer.rowBytes = CGBitmapContextGetBytesPerRow(effectInContext);
-
+        
         UIGraphicsBeginImageContextWithOptions(self.size, NO, [[UIScreen mainScreen] scale]);
         CGContextRef effectOutContext = UIGraphicsGetCurrentContext();
         vImage_Buffer effectOutBuffer;
@@ -237,7 +239,7 @@
         effectOutBuffer.width = CGBitmapContextGetWidth(effectOutContext);
         effectOutBuffer.height = CGBitmapContextGetHeight(effectOutContext);
         effectOutBuffer.rowBytes = CGBitmapContextGetBytesPerRow(effectOutContext);
-
+        
         if (hasBlur) {
             // A description of how to compute the box kernel width from the Gaussian
             // radius (aka standard deviation) appears in the SVG spec:
@@ -264,10 +266,10 @@
         if (hasSaturationChange) {
             CGFloat s = saturationDeltaFactor;
             CGFloat floatingPointSaturationMatrix[] = {
-                    0.0722 + 0.9278 * s, 0.0722 - 0.0722 * s, 0.0722 - 0.0722 * s, 0,
-                    0.7152 - 0.7152 * s, 0.7152 + 0.2848 * s, 0.7152 - 0.7152 * s, 0,
-                    0.2126 - 0.2126 * s, 0.2126 - 0.2126 * s, 0.2126 + 0.7873 * s, 0,
-                    0, 0, 0, 1,
+                0.0722 + 0.9278 * s, 0.0722 - 0.0722 * s, 0.0722 - 0.0722 * s, 0,
+                0.7152 - 0.7152 * s, 0.7152 + 0.2848 * s, 0.7152 - 0.7152 * s, 0,
+                0.2126 - 0.2126 * s, 0.2126 - 0.2126 * s, 0.2126 + 0.7873 * s, 0,
+                0, 0, 0, 1,
             };
             const int32_t divisor = 256;
             NSUInteger matrixSize = sizeof(floatingPointSaturationMatrix) / sizeof(floatingPointSaturationMatrix[0]);
@@ -284,25 +286,25 @@
             }
         }
         if (!effectImageBuffersAreSwapped) {
-                    effectImage = UIGraphicsGetImageFromCurrentImageContext();
+            effectImage = UIGraphicsGetImageFromCurrentImageContext();
         }
         UIGraphicsEndImageContext();
-
+        
         if (effectImageBuffersAreSwapped) {
-                    effectImage = UIGraphicsGetImageFromCurrentImageContext();
+            effectImage = UIGraphicsGetImageFromCurrentImageContext();
         }
         UIGraphicsEndImageContext();
     }
-
+    
     // set up output context
     UIGraphicsBeginImageContextWithOptions(self.size, NO, [[UIScreen mainScreen] scale]);
     CGContextRef outputContext = UIGraphicsGetCurrentContext();
     CGContextScaleCTM(outputContext, 1.0, -1.0);
     CGContextTranslateCTM(outputContext, 0, -self.size.height);
-
+    
     // draw base image
     CGContextDrawImage(outputContext, imageRect, self.CGImage);
-
+    
     // draw effect image
     if (hasBlur) {
         CGContextSaveGState(outputContext);
@@ -312,7 +314,7 @@
         CGContextDrawImage(outputContext, imageRect, effectImage.CGImage);
         CGContextRestoreGState(outputContext);
     }
-
+    
     // add in color tint
     if (tintColor) {
         CGContextSaveGState(outputContext);
@@ -320,11 +322,11 @@
         CGContextFillRect(outputContext, imageRect);
         CGContextRestoreGState(outputContext);
     }
-
+    
     // output image is ready
     UIImage *outputImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
-
+    
     return outputImage;
 }
 
