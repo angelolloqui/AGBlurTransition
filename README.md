@@ -9,7 +9,7 @@ Why use AGBlurTransition?
 
 There are many implementations of view controllers and blur effects. However, they all require changing the code to adapt to their API for presenting/dismissing. With this library, your code will stay using regular modal view controller methods for preseting/dismissing, all you need to do is indicate the transition delegate before presenting it.
 
-![](screenshots/screenshot.gif)
+![](screenshots/preview.gif)
 
 
 Installation
